@@ -41,18 +41,25 @@
         else{
             $("button").prop("disabled",false);
         }
-        */
         $("#target--5").html("<em>Target 5</em>"); // we can add html tags and texts within an element
         $("#target--6").text("Button 6"); // we can replace text within an element
-        $("#target--6").remove(); // we can remove a function
-        $("#target--4").appendTo("#left-card");
+        /*$("#target--6").remove(); // we can remove a function
+        $("#target--4").appendTo("#left-card"); // appendTo
         $("#target--3").appendTo("#right-card");
+        $("#target--6").clone().appendTo("#left-card"); // function chaining
+        $("#target--1").parent().css("background-color", "lightblue"); // target parent element
+        $("#right-card").children().css("color", "green","!important"); // target child element 
+        $(".target:nth-child(5)").addClass("animate__animated animate__zoomInUp"); 
+        $(".target:even").addClass("animate__animated animate__zoomInUp"); */
+        $(".target:odd").addClass("animate__animated animate__zoomInUp");
       }); // end of jquery document.ready function
     </script>
   </head>
   <body>
     <header>
-      <h1 class="text-primary text-center animate__animated animate__zoomIn">Jquery Exercise Playground</h1>
+      <h1 class="text-primary text-center animate__animated animate__zoomIn">
+        Jquery Exercise Playground
+      </h1>
     </header>
 
     <main>
@@ -60,14 +67,14 @@
         <h3>CHALLENGES</h3>
         <div class="row">
           <div class="col-lg-6" style="background-color: yellow">
-            <h4 class="card-title">Left Card</h4>
-            <img
-              src="https://logos-download.com/wp-content/uploads/2017/05/jQuery_logo-700x171.png"
-              alt="jquery img"
-              class="card-img-top"
-            />
             <div class="card" id="left-card">
               <div class="card-body">
+                <h4 class="card-title">Left Card</h4>
+                <img
+                  src="https://logos-download.com/wp-content/uploads/2017/05/jQuery_logo-700x171.png"
+                  alt="jquery img"
+                  class="card-img-top"
+                />
                 <button
                   type="button"
                   class="btn btn-primary target"
@@ -93,14 +100,14 @@
             </div>
           </div>
           <div class="col-lg-6" style="background-color: green">
-            <h4 class="card-title">Right Card</h4>
-            <img
-              src="https://logos-download.com/wp-content/uploads/2017/05/jQuery_logo-700x171.png"
-              alt="jquery img"
-              class="card-img-top"
-            />
             <div class="card" id="right-card">
               <div class="card-body">
+                <h4 class="card-title">Right Card</h4>
+                <img
+                  src="https://logos-download.com/wp-content/uploads/2017/05/jQuery_logo-700x171.png"
+                  alt="jquery img"
+                  class="card-img-top"
+                />
                 <button
                   type="button"
                   class="btn btn-danger target"
