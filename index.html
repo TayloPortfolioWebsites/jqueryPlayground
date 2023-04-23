@@ -28,6 +28,7 @@
       // $() means jquery() in jquery
       // Anything that you should put in this function will run as soon as your browser has loaded your page
       $(document).ready(function () {
+        /*
         $("button").addClass("animate__animated animate__bounce"); // we are targeting an element selector
         $(".card").addClass("animate__animated animate__shakeX"); // we can target class names
         $("#target--3").addClass("animate__animated animate__shakeY"); // we can target ids
@@ -40,6 +41,9 @@
         else{
             $("button").prop("disabled",false);
         }
+        */
+        $("#target--5").html("<em>Target 5</em>"); // we can add html tags and texts within an element
+        $("#target--6").text("Button 6"); // we can replace text within an element
       }); // end of jquery document.ready function
     </script>
   </head>
