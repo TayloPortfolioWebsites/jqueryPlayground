@@ -50,8 +50,15 @@
         $("#target--1").parent().css("background-color", "lightblue"); // target parent element
         $("#right-card").children().css("color", "green","!important"); // target child element 
         $(".target:nth-child(5)").addClass("animate__animated animate__zoomInUp"); 
-        $(".target:even").addClass("animate__animated animate__zoomInUp"); */
-        $(".target:odd").addClass("animate__animated animate__zoomInUp");
+        $(".target:even").addClass("animate__animated animate__zoomInUp"); 
+        $(".target:odd").addClass("animate__animated animate__zoomInUp"); 
+        $("body").addClass("animate__animated animate__hinge"); */
+        $("#hide").click(function(){
+            $("p").hide();
+        });
+        $("#show").click(function(){
+            $("p").show();
+        });
       }); // end of jquery document.ready function
     </script>
   </head>
@@ -133,6 +140,14 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <section>
+        <h2>Jquery Effects</h2>
+        <p>We can hide a button and show a button</p>
+
+        <button id="hide">HIDE</button>
+        <button id="show">SHOW</button>
       </section>
     </main>
     <script
