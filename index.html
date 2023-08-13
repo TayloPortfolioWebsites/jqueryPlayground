@@ -6,66 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jquery Playground</title>
     <!-- BOOTSTRAP CDN -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
     <!-- ANIMATE STYLE CSS LIBRARY -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <style>
-        #div1,#div2,#div3{
-            width: 80px;
-            height: 80px;
-            margin: 10px;
-            display: none;
-        }
-
-        #div1{
-            background-color: red;
-        }
-
-        #div2{
-            background-color: green;
-        }
-
-        #div3{
-            background-color: blue;
-        }
-
-        #panel, #flip{
-            padding: 5px;
-            text-align: center;
-            background-color: yellow;
-            border: solid 1px black;
-            width: 50%;
-            margin: 0 auto;
-        }
-
-        #flip{
-            cursor: pointer;
-        }
-
-        #panel{
-            padding: 50px;
-            display: none;
-        }
-    </style>
-
-    <!-- JQUERY CDN -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.4.min.js"
-      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <!-- JQUERY CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
-      // $() means jquery() in jquery
-      // Anything that you should put in this function will run as soon as your browser has loaded your page
+      $(document).ready(function(){
+        $("button").click(() => {
+          alert("Value: " + $("#testValue").val());
+        });
+      });
+
       $(document).ready(function () {
         /*
         $("button").addClass("animate__animated animate__bounce"); // we are targeting an element selector
@@ -82,7 +35,7 @@
         }
         $("#target--5").html("<em>Target 5</em>"); // we can add html tags and texts within an element
         $("#target--6").text("Button 6"); // we can replace text within an element
-        /*$("#target--6").remove(); // we can remove a function
+        $("#target--6").remove(); // we can remove a function
         $("#target--4").appendTo("#left-card"); // appendTo
         $("#target--3").appendTo("#right-card");
         $("#target--6").clone().appendTo("#left-card"); // function chaining
@@ -91,38 +44,38 @@
         $(".target:nth-child(5)").addClass("animate__animated animate__zoomInUp"); 
         $(".target:even").addClass("animate__animated animate__zoomInUp"); 
         $(".target:odd").addClass("animate__animated animate__zoomInUp"); 
-        $("body").addClass("animate__animated animate__hinge"); */
-        $("#hide").click(function(){
-            $("p").hide();
+        $("body").addClass("animate__animated animate__hinge");
+        $("#hide").click(function () {
+          $("p").hide();
         });
-        $("#show").click(function(){
-            $("p").show();
+        $("#show").click(function () {
+          $("p").show();
+        }); 
+        $("#btn--delay").click(function () {
+          $(".para--1seconds").hide(1000);
         });
-        $("#btn--delay").click(function(){
-            $(".para--1seconds").hide(1000);
+        $("#btn--toggle").click(() => {
+          $("#para--toggle").toggle(5000);
+        }); 
+        $("#btn--fade").click(function () {
+          $("#div1").fadeIn("fast");
+          $("#div2").fadeIn("slow");
+          $("#div3").fadeIn("5000");
+        }); */
+        $("#flip").click(() => {
+          $("#panel").slideDown("slow");
         });
-        $("#btn--toggle").click(()=>{
-            $("#para--toggle").toggle(5000);
-        });
-        $("#btn--fade").click(function(){
-            $("#div1").fadeIn("fast");
-            $("#div2").fadeIn("slow");
-            $("#div3").fadeIn("5000");
-        });
-        $("#flip").click(()=>{
-            $("#panel").slideDown("slow");
-        });
-        $("button").click(()=>{
-          alert(("Value: ") + $("#testValue").val());
+        $("button").click(() => {
+          alert("Value: " + $("#testValue").val());
         });
       }); // end of jquery document.ready function
     </script>
+    <link rel="stylesheet" href="style.css">
   </head>
+
   <body>
     <header>
-      <h1 class="text-primary text-center animate__animated animate__zoomIn">
-        Jquery Exercise Playground
-      </h1>
+      <h1 class="text-primary text-center animate__animated animate__zoomIn">Jquery Exercise Playground</h1>
     </header>
 
     <main>
@@ -133,32 +86,10 @@
             <div class="card" id="left-card">
               <div class="card-body">
                 <h4 class="card-title">Left Card</h4>
-                <img
-                  src="https://logos-download.com/wp-content/uploads/2017/05/jQuery_logo-700x171.png"
-                  alt="jquery img"
-                  class="card-img-top"
-                />
-                <button
-                  type="button"
-                  class="btn btn-primary target"
-                  id="target--1"
-                >
-                  Target 1
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary target"
-                  id="target--2"
-                >
-                  Target 2
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-success target"
-                  id="target--3"
-                >
-                  Target 3
-                </button>
+                <img src="https://logos-download.com/wp-content/uploads/2017/05/jQuery_logo-700x171.png" alt="jquery img" class="card-img-top"/>
+                <button type="button" class="btn btn-primary target" id="target--1">Target 1</button>
+                <button type="button" class="btn btn-secondary target" id="target--2">Target 2</button>
+                <button type="button" class="btn btn-success target" id="target--3">Target 3</button>
               </div>
             </div>
           </div>
@@ -166,55 +97,32 @@
             <div class="card" id="right-card">
               <div class="card-body">
                 <h4 class="card-title">Right Card</h4>
-                <img
-                  src="https://logos-download.com/wp-content/uploads/2017/05/jQuery_logo-700x171.png"
-                  alt="jquery img"
-                  class="card-img-top"
-                />
-                <button
-                  type="button"
-                  class="btn btn-danger target"
-                  id="target--4"
-                >
-                  Target 4
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-warning target"
-                  id="target--5"
-                >
-                  Target 5
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-info target"
-                  id="target--6"
-                >
-                  Target 6
-                </button>
+                <img src="https://logos-download.com/wp-content/uploads/2017/05/jQuery_logo-700x171.png" alt="jquery img" class="card-img-top"/>
+                <button type="button" class="btn btn-danger target" id="target--4">Target 4</button>
+                <button type="button" class="btn btn-warning target" id="target--5">Target 5</button>
+                <button type="button" class="btn btn-info target" id="target--6">Target 6</button>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <hr>
+      <hr />
       <section>
         <h2>Jquery Effects</h2>
         <h3>Hide and show</h3>
         <p>We can hide a button and show a button</p>
-
         <button id="hide">HIDE</button>
         <button id="show">SHOW</button>
-        <hr>
+        <hr />
         <button id="btn--delay">HIDE WITH 1000 ms</button>
-        <p class="para--1seconds"> This is our first paragraph for testing delay.</p>
-        <hr>
+        <p class="para--1seconds">This is our first paragraph for testing delay.</p>
+        <hr />
         <h4>Toggle effect</h4>
         <button id="btn--toggle">Toggle paragraph</button>
-        <p id="para--toggle"> This is our first paragraph for testing the toggle effect.</p>
+        <p id="para--toggle">This is our first paragraph for testing the toggle effect.</p>
       </section>
-      
-      <section style="height: 50vh; background-color: lightblue;">
+
+      <section style="height: 50vh; background-color: lightblue">
         <h2>FADE EFFECT</h2>
         <button id="btn--fade">Click to fade</button>
         <div id="div1"></div>
@@ -222,20 +130,18 @@
         <div id="div3"></div>
       </section>
 
-      <section style="height: 50vh; background-color: antiquewhite;">
+      <section style="height: 50vh; background-color: antiquewhite">
         <div id="flip">Click to slide down</div>
         <div id="panel">Sliding panel</div>
-    </section>
+      </section>
 
-    <section style="height: 50vh; background-color: goldenrod; text-align: center;">
-      <p>Name: <input type="text" id="testValue" value="Tiffany Taylo"></p>
-      <button>Show Value</button>
-    </section>
+      <section style="height: 50vh; background-color: goldenrod; text-align: center">
+        <p>Name: <input type="text" id="testValue" value="Tiffany Taylo" /></p>
+        <button>Show Value</button>
+      </section>
+
     </main>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
